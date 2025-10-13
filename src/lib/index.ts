@@ -2,6 +2,32 @@ import { writable } from 'svelte/store';
 import { browser } from '$app/environment';
 import type { Serializable, WidenLiteral } from '$types';
 
+/**
+ * Creates a Svelte store that automatically persists its value to localStorage.
+ *
+ * @template T - The type of the value stored, must be serializable
+ * @param key - The localStorage key to store the value under
+ * @param initial - The initial value of the store
+ * @param options - Optional configuration
+ * @param options.serialize - Custom serialization function (defaults to JSON.stringify)
+ * @param options.deserialize - Custom deserialization function (defaults to JSON.parse)
+ * @param options.saveInitial - Whether to save the initial value to localStorage if no stored value exists
+ *
+ * @example
+ * // Basic usage
+ * const count = storable('count', 0);
+ *
+ * @example
+ * // With custom serialization
+ * const date = storable('lastVisit', new Date(), {
+ *   serialize: (d) => d.toISOString(),
+ *   deserialize: (s) => new Date(s)
+ * });
+ *
+ * @example
+ * // Don't save initial value if not in storage
+ * const preferences = storable('prefs', { theme: 'dark' }, { saveInitial: false });
+ */
 const storable = <T extends Serializable>(
 	key: string,
 	initial: T,
@@ -46,7 +72,11 @@ const storable = <T extends Serializable>(
 		set,
 		update,
 		reset: _reset,
-		remove: (reset: boolean = true) => {
+		/**
+		 * Removes the value from localStorage
+		 * @param reset - Whether to also reset the store value to initial
+		 */
+		remove: (reset = true) => {
 			if (!browser) return;
 
 			localStorage.removeItem(key);
