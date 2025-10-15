@@ -1,6 +1,6 @@
 {
-	"name": "svelte-storable",
-	"version": "0.0.1",
+	"name": "@madkarma/svelte-storable",
+	"version": "1.0.0",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build && bun run prepack",
@@ -10,7 +10,11 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"format": "prettier --write .",
-		"lint": "prettier --check . && eslint ."
+		"lint": "prettier --check . && eslint .",
+		"tags": "git push origin --tags && git push",
+		"patch": "bun pm version patch && bun run tags",
+		"minor": "bun pm version minor && bun run tags",
+		"major": "bun pm version major && bun run tags"
 	},
 	"files": [
 		"dist",
@@ -59,5 +63,9 @@
 	"dependencies": {
 		"@madkarma/ts-utils": "^1.1.1"
 	},
-	"license": "MIT"
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/madkarmaa/svelte-storable.git"
+	}
 }
