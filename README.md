@@ -1,4 +1,4 @@
-# svelte-storable
+# @madkarma/svelte-storable
 
 A lightweight Svelte store that automatically persists its value to `localStorage`. Perfect for maintaining state across browser sessions with minimal setup.
 
@@ -13,21 +13,21 @@ A lightweight Svelte store that automatically persists its value to `localStorag
 ## 📦 Installation
 
 ```bash
-npm install svelte-storable
+npm install @madkarma/svelte-storable
 ```
 
 ```bash
-bun add svelte-storable
+bun add @madkarma/svelte-storable
 ```
 
 ```bash
-pnpm add svelte-storable
+pnpm add @madkarma/svelte-storable
 ```
 
 ## 🚀 Basic Usage
 
 ```typescript
-import storable from 'svelte-storable';
+import storable from '@madkarma/svelte-storable';
 
 // Create a persisted store
 const count = storable('count', 0);
@@ -44,7 +44,7 @@ In your Svelte component:
 
 ```svelte
 <script>
-	import storable from 'svelte-storable';
+	import storable from '@madkarma/svelte-storable';
 
 	const count = storable('count', 0);
 </script>
@@ -84,7 +84,7 @@ A store object with the following methods:
 ### Basic Counter
 
 ```typescript
-import storable from 'svelte-storable';
+import storable from '@madkarma/svelte-storable';
 
 const count = storable('count', 0);
 

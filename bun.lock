@@ -2,7 +2,7 @@
   "lockfileVersion": 1,
   "workspaces": {
     "": {
-      "name": "svelte-storable",
+      "name": "@madkarma/svelte-storable",
       "dependencies": {
         "@madkarma/ts-utils": "^1.1.1",
       },
