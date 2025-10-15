@@ -123,7 +123,7 @@
 
     "@jridgewell/trace-mapping": ["@jridgewell/trace-mapping@0.3.31", "", { "dependencies": { "@jridgewell/resolve-uri": "^3.1.0", "@jridgewell/sourcemap-codec": "^1.4.14" } }, "sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw=="],
 
-    "@madkarma/ts-utils": ["@madkarma/ts-utils@1.1.1", "", { "peerDependencies": { "typescript": "^5.9.3" } }, "sha512-b0nqk2MG+aWjrXMjPs3q4CogeXYoSMzO/NY2+OKee+JlIEpVBJejjbejZ2ZEtvge4UbyPbGQdbNg5Yu2uZuBfg=="],
+    "@madkarma/ts-utils": ["@madkarma/ts-utils@1.1.2", "", { "peerDependencies": { "typescript": "^5.9.3" } }, "sha512-iQqKMtcd0QXSHzHm0L0VNHcUyAuYyd9W05F9fG/pvdB3YZOQzfN85v6pFUH5BdjbjhFGOIs/JwmXBEu290YRww=="],
 
     "@nodelib/fs.scandir": ["@nodelib/fs.scandir@2.1.5", "", { "dependencies": { "@nodelib/fs.stat": "2.0.5", "run-parallel": "^1.1.9" } }, "sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g=="],
 
