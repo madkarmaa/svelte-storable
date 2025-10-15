@@ -67,5 +67,6 @@
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/madkarmaa/svelte-storable.git"
-	}
+	},
+	"description": "A Svelte store that syncs with localStorage"
 }
