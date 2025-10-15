@@ -1,6 +1,17 @@
 import { writable } from 'svelte/store';
-import { browser } from '$app/environment';
-import type { Serializable, WidenLiteral } from '$types';
+import type { JSONSerializable } from '@madkarma/ts-utils/types';
+
+type WidenLiteral<T> = T extends number
+	? number
+	: T extends string
+		? string
+		: T extends boolean
+			? boolean
+			: T extends undefined
+				? undefined
+				: T;
+
+const browser = typeof window !== 'undefined';
 
 /**
  * Creates a Svelte store that automatically persists its value to localStorage.
@@ -28,7 +39,7 @@ import type { Serializable, WidenLiteral } from '$types';
  * // Don't save initial value if not in storage
  * const preferences = storable('prefs', { theme: 'dark' }, { saveInitial: false });
  */
-const storable = <T extends Serializable>(
+const storable = <T extends JSONSerializable>(
 	key: string,
 	initial: T,
 	options: Partial<{
