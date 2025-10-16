@@ -8,7 +8,6 @@ A lightweight Svelte store that automatically persists its value to `localStorag
 - 🎯 **Type-safe**: Full TypeScript support with generic types
 - 🛠️ **Customizable**: Custom serialization/deserialization functions
 - 🧹 **Clean API**: Simple, intuitive interface extending Svelte's writable store
-- 🪶 **Lightweight**: Zero dependencies (except Svelte)
 
 ## 📦 Installation
 
@@ -22,6 +21,10 @@ bun add @madkarma/svelte-storable
 
 ```bash
 pnpm add @madkarma/svelte-storable
+```
+
+```bash
+yarn add @madkarma/svelte-storable
 ```
 
 ## 🚀 Basic Usage
@@ -105,13 +108,7 @@ const lastVisit = storable('lastVisit', new Date(), {
 Useful when you only want to persist values that the user has explicitly set:
 
 ```typescript
-const preferences = storable(
-	'prefs',
-	{ theme: 'dark' },
-	{
-		saveInitial: false
-	}
-);
+const preferences = storable('prefs', { theme: 'dark' }, { saveInitial: false });
 
 // Initial value won't be saved to localStorage until user changes it
 ```
@@ -119,11 +116,11 @@ const preferences = storable(
 ### User Preferences
 
 ```typescript
-interface UserPreferences {
+type UserPreferences = {
 	theme: 'light' | 'dark';
 	language: string;
 	notifications: boolean;
-}
+};
 
 const preferences = storable<UserPreferences>('user-prefs', {
 	theme: 'dark',
