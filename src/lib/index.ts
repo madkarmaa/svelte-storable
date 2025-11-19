@@ -3,13 +3,11 @@ import type { JSONSerializable } from '@madkarma/ts-utils/types';
 
 type WidenLiteral<T> = T extends number
 	? number
-	: T extends string
-		? string
-		: T extends boolean
-			? boolean
-			: T extends undefined
-				? undefined
-				: T;
+	: T extends boolean
+		? boolean
+		: T extends undefined
+			? undefined
+			: T;
 
 const browser = typeof window !== 'undefined';
 
